@@ -3,10 +3,15 @@ import { Container, Card, CardImg, CardText, CardBody, CardTitle } from 'reactst
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faStoreAlt, faArchive, faClipboardList } from '@fortawesome/free-solid-svg-icons'
 import {useSelector} from 'react-redux'
-import './Product.css'
+import {useHistory} from 'react-router-dom'
+import './ProductComponent.css'
 
 function ProductComponent() {
     const productState = useSelector(state => state.product.listProduct)
+    const history = useHistory()
+    function goDetailProduct (id) {
+        history.push(`/detail-product/${id}`)
+    }
     function changeRupiah (price) {
         return new Intl.NumberFormat(['ban', 'id']).format(price)
     }
@@ -32,7 +37,7 @@ function ProductComponent() {
                 <div className="list-product">
                     <div className="row">
                     {productState.map(item => (
-                        <div className="col-lg-3" key={item.id}>
+                        <div className="col-lg-3" key={item.id} onClick={goDetailProduct(item.id)}>
                             <Card className="shadow p-3 mb-5 bg-body" style={{borderRadius: "10px", height: "400px"}}>
                                 <CardImg top width="100%" src={item.imgUrl} alt="Card image cap" />
                                 <CardBody>
