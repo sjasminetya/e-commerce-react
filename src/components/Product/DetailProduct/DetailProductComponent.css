@@ -1,0 +1,6 @@
+.image-product img {
+    width: 400px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+}

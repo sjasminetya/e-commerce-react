@@ -6,3 +6,14 @@ export const getProduct = () => {
         payload: product
     }
 }
+
+export const detailProduct = (id) => {
+    const load = []
+    product.map(item => load.push(item))
+    const findId = load.find(item => item.id === Number(id))
+    
+    return {
+        type: "DETAIL_PRODUCT",
+        payload: {detail: findId}
+    }
+}

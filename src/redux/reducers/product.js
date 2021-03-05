@@ -1,5 +1,6 @@
 const initialState = {
-    listProduct: []
+    listProduct: [],
+    detailProduct: []
 }
 
 const productReducer = (state = initialState, action) => {
@@ -8,7 +9,13 @@ const productReducer = (state = initialState, action) => {
             ...state,
             listProduct: action.payload
         }
-    } else {
+    } else if (action.type === 'DETAIL_PRODUCT') {
+        return {
+            ...state,
+            detailProduct: action.payload.detail
+        }
+    }
+    else {
         return state
     }
 }

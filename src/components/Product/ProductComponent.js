@@ -37,7 +37,7 @@ function ProductComponent() {
                 <div className="list-product">
                     <div className="row">
                     {productState.map(item => (
-                        <div className="col-lg-3" key={item.id} onClick={goDetailProduct(item.id)}>
+                        <div className="col-lg-3" key={item.id} onClick={() => goDetailProduct(item.id)}>
                             <Card className="shadow p-3 mb-5 bg-body" style={{borderRadius: "10px", height: "400px"}}>
                                 <CardImg top width="100%" src={item.imgUrl} alt="Card image cap" />
                                 <CardBody>
