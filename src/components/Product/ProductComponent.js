@@ -7,7 +7,9 @@ import './Product.css'
 
 function ProductComponent() {
     const productState = useSelector(state => state.product.listProduct)
-    console.log(productState)
+    function changeRupiah (price) {
+        return new Intl.NumberFormat(['ban', 'id']).format(price)
+    }
     return (
         <div>
             <Container>
@@ -35,7 +37,7 @@ function ProductComponent() {
                                 <CardImg top width="100%" src={item.imgUrl} alt="Card image cap" />
                                 <CardBody>
                                     <CardTitle tag="h6" className="text-left">{item.title}</CardTitle>
-                                    <CardText className="text-danger">Rp {item.price}</CardText>
+                                    <CardText className="text-danger">Rp {changeRupiah(item.price)}</CardText>
                                 </CardBody>
                             </Card>
                         </div>
