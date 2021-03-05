@@ -1,0 +1,27 @@
+.breadcrumbs-icon {
+    margin: 20px 0px;
+}
+
+.breadcrumbs-icon .icon {
+    font-size: 20px;
+}
+
+.breadcrumbs-icon .active {
+    color: green;
+}
+
+.active-line {
+    border-bottom: 3px solid green;
+    width: 15%;
+    margin: -4px 0px 0px 0px;
+}
+
+.line {
+    border-bottom: 1px solid rgba(0,0,0,.5);
+    width: 100%;
+    margin: 0px 0px 0px 0px;
+}
+
+.list-product {
+    margin: 20px 0px;
+}
