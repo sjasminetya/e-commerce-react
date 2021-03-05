@@ -2,9 +2,12 @@ import React from 'react'
 import { Container, Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faStoreAlt, faArchive, faClipboardList } from '@fortawesome/free-solid-svg-icons'
+import {useSelector} from 'react-redux'
 import './Product.css'
 
 function ProductComponent() {
+    const productState = useSelector(state => state.product.listProduct)
+    console.log(productState)
     return (
         <div>
             <Container>
@@ -26,56 +29,24 @@ function ProductComponent() {
                 <div className="active-line"></div>
                 <div className="list-product">
                     <div className="row">
-                        <div className="col-lg-3">
-                            <Card className="shadow p-3 mb-5 bg-body" style={{borderRadius: "10px"}}>
-                                <CardImg top width="100%" src="https://ecs7-p.tokopedia.net/img/cache/200-square/VqbcmM/2021/1/29/4a62d109-9107-4acf-8425-9785b1f33368.jpg.webp" alt="Card image cap" />
+                    {productState.map(item => (
+                        <div className="col-lg-3" key={item.id}>
+                            <Card className="shadow p-3 mb-5 bg-body" style={{borderRadius: "10px", height: "400px"}}>
+                                <CardImg top width="100%" src={item.imgUrl} alt="Card image cap" />
                                 <CardBody>
-                                    <CardTitle tag="h6">JACKET COUGLE SNOWDOPE WOLV ORIGINAL1 - army, M</CardTitle>
-                                    <CardText className="text-danger">Rp 120.000</CardText>
+                                    <CardTitle tag="h6" className="text-left">{item.title}</CardTitle>
+                                    <CardText className="text-danger">Rp {item.price}</CardText>
                                 </CardBody>
                             </Card>
                         </div>
-                        <div className="col-lg-3">
-                            <Card className="shadow p-3 mb-5 bg-body" style={{borderRadius: "10px"}}>
-                                <CardImg top width="100%" src="https://ecs7-p.tokopedia.net/img/cache/200-square/VqbcmM/2021/1/29/4a62d109-9107-4acf-8425-9785b1f33368.jpg.webp" alt="Card image cap" />
-                                <CardBody>
-                                    <CardTitle tag="h6">JACKET COUGLE SNOWDOPE WOLV ORIGINAL1 - army, M</CardTitle>
-                                    <CardText className="text-danger">Rp 120.000</CardText>
-                                </CardBody>
-                            </Card>
-                        </div>
-                        <div className="col-lg-3">
-                            <Card className="shadow p-3 mb-5 bg-body" style={{borderRadius: "10px"}}>
-                                <CardImg top width="100%" src="https://ecs7-p.tokopedia.net/img/cache/200-square/VqbcmM/2021/1/29/4a62d109-9107-4acf-8425-9785b1f33368.jpg.webp" alt="Card image cap" />
-                                <CardBody>
-                                    <CardTitle tag="h6">JACKET COUGLE SNOWDOPE WOLV ORIGINAL1 - army, M</CardTitle>
-                                    <CardText className="text-danger">Rp 120.000</CardText>
-                                </CardBody>
-                            </Card>
-                        </div>
-                        <div className="col-lg-3">
-                            <Card className="shadow p-3 mb-5 bg-body" style={{borderRadius: "10px"}}>
-                                <CardImg top width="100%" src="https://ecs7-p.tokopedia.net/img/cache/200-square/VqbcmM/2021/1/29/4a62d109-9107-4acf-8425-9785b1f33368.jpg.webp" alt="Card image cap" />
-                                <CardBody>
-                                    <CardTitle tag="h6">JACKET COUGLE SNOWDOPE WOLV ORIGINAL1 - army, M</CardTitle>
-                                    <CardText className="text-danger">Rp 120.000</CardText>
-                                </CardBody>
-                            </Card>
-                        </div>
-                        <div className="col-lg-3">
-                            <Card className="shadow p-3 mb-5 bg-body" style={{borderRadius: "10px"}}>
-                                <CardImg top width="100%" src="https://ecs7-p.tokopedia.net/img/cache/200-square/VqbcmM/2021/1/29/4a62d109-9107-4acf-8425-9785b1f33368.jpg.webp" alt="Card image cap" />
-                                <CardBody>
-                                    <CardTitle tag="h6">JACKET COUGLE SNOWDOPE WOLV ORIGINAL1 - army, M</CardTitle>
-                                    <CardText className="text-danger">Rp 120.000</CardText>
-                                </CardBody>
-                            </Card>
-                        </div>
+                    ))}
                     </div>
                 </div>
             </Container>
         </div>
     )
 }
+
+
 
 export default ProductComponent

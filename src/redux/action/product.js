@@ -1,5 +1,8 @@
 import product from '../../mock/products.json'
 
-export const getProduct = () => (dispatch) => {
-    dispatch({type: "GET_PRODUCT", payload: product})
+export const getProduct = () => {
+    return {
+        type: "GET_PRODUCT",
+        payload: product
+    }
 }
