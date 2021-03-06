@@ -14,7 +14,6 @@ function DetailProductComponent(props) {
     let currentProduct = ''
 
     chartState.map(item => currentProduct = item)
-    console.log(currentProduct)
     
     const toggle = (data) => {
         if (!currentProduct) {

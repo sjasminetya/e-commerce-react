@@ -10,12 +10,17 @@ import {
 } from 'reactstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faStoreAlt, faEnvelope, faBell, faShoppingCart, faSearch } from '@fortawesome/free-solid-svg-icons'
+import {useSelector} from 'react-redux'
 import './Header.css'
 
 function HeaderComponent() {
     const [isOpen, setIsOpen] = useState(false);
-
     const toggle = () => setIsOpen(!isOpen);
+    const chartState = useSelector(state => state.product.chart)
+
+    const totalQty = chartState.reduce((a, b) => a + b.qty, 0)
+
+    console.log(totalQty)
 
     return (
         <div>
@@ -31,8 +36,8 @@ function HeaderComponent() {
                             <InputGroupText><FontAwesomeIcon icon={faSearch} /></InputGroupText>
                         </InputGroup>
                         <div className="ml-auto">
-                            <FontAwesomeIcon className="mr-4" icon={faShoppingCart} />
-                            <FontAwesomeIcon className="mr-4" icon={faBell} />
+                            <FontAwesomeIcon className="ml-4" icon={faShoppingCart} /> {totalQty}
+                            <FontAwesomeIcon className="ml-4 mr-4" icon={faBell} />
                             <FontAwesomeIcon className="mr-5" icon={faEnvelope} />
                             <NavbarText className="mr-5"><FontAwesomeIcon icon={faStoreAlt} /> Toko</NavbarText>
                             <NavbarText className="mr-3"><FontAwesomeIcon icon={faUser} /> Muhammad</NavbarText>
