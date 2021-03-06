@@ -26,8 +26,23 @@
     font-weight: bold;
     font-size: medium;
     padding-top: 0px;
+    background: green;
+}
+
+.list-product .btn-qty:hover {
+    background: green;
+}
+
+.list-product .detail p {
+    font-weight: bold;
 }
 
 .shopping .btn-buy {
     width: 100%;
+    background: #FF4500;
+    border: none;
+}
+
+.shopping .btn-buy:hover {
+    background: #FF4500;
 }

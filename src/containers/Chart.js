@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import DetailChart from '../components/Chart/DetailChart/DetailChart'
+import DetailChart from '../components/Chart/DetailChart/DetailChartComponent'
 
 class Chart extends Component {
     render() {
