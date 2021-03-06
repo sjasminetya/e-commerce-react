@@ -29,7 +29,12 @@ const productReducer = (state = initialState, action) => {
     } else if (action.type === 'REDUCE_QTY') {
         return {
             ...state,
-            cart: state.cart.map(item => item.id === Number(action.payload.cart.id) ? item.qty < 1 ? item.qty = 0 : {...item, qty: item.qty - 1} : item)
+            cart: state.cart.map(item => item.id === Number(action.payload.cart.id) ? item.qty <= 0 ? item.qty = 0 : {...item, qty: item.qty - 1} : item)
+        }
+    } else if (action.type === 'REMOVE_ITEM') {
+        return {
+            ...state,
+            cart: state.cart.filter(item => item.id !== Number(action.payload))
         }
     }
     else {

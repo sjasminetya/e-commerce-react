@@ -1,7 +1,9 @@
 import React from 'react'
 import { Button, Container, Row } from 'reactstrap'
 import {useSelector, useDispatch} from 'react-redux'
-import {addQty, reduceQty} from '../../../redux/action'
+import {addQty, reduceQty, removeItem} from '../../../redux/action'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrash, faHeart } from '@fortawesome/free-solid-svg-icons'
 import './DetailChart.css'
 
 function DetailChart() {
@@ -15,6 +17,10 @@ function DetailChart() {
 
     const reduce = (id) => {
         dispatch(reduceQty(id))
+    }
+
+    const remove = (id) => {
+        dispatch(removeItem(id))
     }
 
     console.log(chartState)
@@ -41,10 +47,23 @@ function DetailChart() {
                                 </div>
                                 <div className="d-flex justify-content-between">
                                     <h6 className="text-green pt-3">Tulis Catatan untuk Toko</h6>
-                                    <div className="d-flex pt-3">
-                                        <Button className="btn-qty btn-sm btn-secondary mr-4" onClick={() => reduce(item.id)}>-</Button>
-                                            {item.qty}
-                                        <Button className="btn-qty btn-sm btn-secondary ml-4" onClick={() => add(item.id)}>+</Button>
+                                    <div className="d-flex">
+                                    <FontAwesomeIcon icon={faHeart} className="mr-4 mt-3" />
+                                        <FontAwesomeIcon icon={faTrash} onClick={() => remove(item.id)} className="mr-4 mt-3" />
+                                        {item.qty === 0 ? (
+                                            <div className="d-flex">
+                                                <Button className="btn-qty btn-sm btn-secondary mr-4 mt-2" disabled onClick={() => reduce(item.id)}>-</Button>
+                                                    <p className="pt-2" disabled>{item.qty}</p>
+                                                <Button className="btn-qty btn-sm btn-secondary ml-4 mt-2" onClick={() => add(item.id)}>+</Button>
+                                            </div>
+                                            
+                                        ) : (
+                                            <div className="d-flex">
+                                                <Button className="btn-qty btn-sm btn-secondary mr-4 mt-2" onClick={() => reduce(item.id)}>-</Button>
+                                                    <p className="pt-2">{item.qty}</p>
+                                                <Button className="btn-qty btn-sm btn-secondary ml-4 mt-2" onClick={() => add(item.id)}>+</Button>
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
                             </section>
