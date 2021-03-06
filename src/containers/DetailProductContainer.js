@@ -7,7 +7,6 @@ class DetailProductContainer extends Component {
     componentDidMount () {
         const { id } = this.props.match.params;
         this.props.detailProduct(id)
-        console.log(id)
     }
     render() {
         return (

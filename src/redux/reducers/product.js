@@ -1,6 +1,7 @@
 const initialState = {
     listProduct: [],
-    detailProduct: []
+    detailProduct: [],
+    chart: []
 }
 
 const productReducer = (state = initialState, action) => {
@@ -13,6 +14,11 @@ const productReducer = (state = initialState, action) => {
         return {
             ...state,
             detailProduct: action.payload.detail
+        }
+    } else if (action.type === 'ADD_TO_CHART') {
+        return {
+            ...state,
+            chart: [...state.chart, action.payload.chart]
         }
     }
     else {
