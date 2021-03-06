@@ -1,11 +1,16 @@
 import React from 'react'
 import { Modal, ModalHeader, ModalBody } from 'reactstrap'
-import {useParams} from 'react-router-dom'
+import {useParams, useHistory} from 'react-router-dom'
 import { Button } from 'reactstrap'
 import './ChartComponent.css'
 
 function ChartComponent(props) {
     const {id} = useParams()
+    const history = useHistory()
+
+    const goChart = () => {
+        history.push('/cart')
+    }
 
     return (
         <div>
@@ -19,7 +24,7 @@ function ChartComponent(props) {
                                     <img src={item.imgUrl} alt=""/>
                                 </div>
                                 <h5 className="ml-3">{item.title}</h5>
-                                <Button className="btn-success" style={{height: "fit-content"}}>Lihat Keranjang</Button>
+                                <Button className="btn-success" style={{height: "fit-content"}} onClick={goChart}>Lihat Keranjang</Button>
                             </div>
                         ) : null
                     ))}

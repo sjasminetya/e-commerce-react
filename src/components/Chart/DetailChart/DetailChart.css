@@ -1,0 +1,33 @@
+.delete-list-cart,
+.list-product,
+.shopping {
+    width: 100%;
+    height: max-content;
+    border-radius: 10px;
+    background: #FFFFFF;
+}
+
+.text-green {
+    color: green;
+    font-weight: bold;
+}
+
+.list-product .image-list img {
+    width: 100px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: contain;
+}
+
+.list-product .btn-qty {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-weight: bold;
+    font-size: medium;
+    padding-top: 0px;
+}
+
+.shopping .btn-buy {
+    width: 100%;
+}

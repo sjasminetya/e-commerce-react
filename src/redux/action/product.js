@@ -18,10 +18,26 @@ export const detailProduct = (id) => {
     }
 }
 
-export const addToChart = (data) => (dispatch) => {
-    const load = []
-    product.map(item => load.push(item))
-    const findId = load.find(item => item.id === Number(data.id))
-    dispatch({type: "ADD_TO_CHART", payload: {chart: {...data, qty: 1} }})
-    console.log(findId)
+export const addToChart = (id) => {
+    const findId = product.find(item => item.id === Number(id))
+    return {
+        type: "ADD_TO_CHART",
+        payload: {cart: findId}
+    }
+}
+
+export const addQty = (id) => {
+    const findId = product.find(item => item.id === Number(id))
+    return {
+        type: "ADD_QTY",
+        payload: {cart: findId}
+    }
+}
+
+export const reduceQty = (id) => {
+    const findId = product.find(item => item.id === Number(id))
+    return {
+        type: "REDUCE_QTY",
+        payload: {cart: findId}
+    }
 }
