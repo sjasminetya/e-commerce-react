@@ -12,7 +12,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faStoreAlt, faEnvelope, faBell, faShoppingCart, faSearch } from '@fortawesome/free-solid-svg-icons'
 import {useSelector} from 'react-redux'
 import {Link} from 'react-router-dom'
-import './Header.css'
+import './HeaderComponent.css'
 
 function HeaderComponent() {
     const [isOpen, setIsOpen] = useState(false);
@@ -29,14 +29,25 @@ function HeaderComponent() {
                     <NavbarToggler onClick={toggle} />
                     <Collapse isOpen={isOpen} navbar>
                         <NavbarText>Kategori</NavbarText>
-                        <InputGroup style={{width: "55%"}} className="ml-3">
+                        <InputGroup style={{width: "50%"}} className="ml-3">
                             <Input placeholder="search product" />
                             <InputGroupText><FontAwesomeIcon icon={faSearch} /></InputGroupText>
                         </InputGroup>
                         <div className="ml-auto">
-                            <Link to="/cart"><FontAwesomeIcon className="ml-4" icon={faShoppingCart} /> {totalQty}</Link>
-                            <FontAwesomeIcon className="ml-4 mr-4" icon={faBell} />
-                            <FontAwesomeIcon className="mr-5" icon={faEnvelope} />
+                            {totalQty !== 0 ? (
+                                    <Link to="/cart">
+                                    <div className="icon-cart">
+                                        <p>{totalQty}</p>
+                                    </div>
+                                        <FontAwesomeIcon className="ml-4" style={{color: "rgba(0,0,0,.5)"}} icon={faShoppingCart} />
+                                    </Link>
+                            ) : (
+                                <Link to="/cart">
+                                    <FontAwesomeIcon className="ml-4" style={{color: "rgba(0,0,0,.5)"}} icon={faShoppingCart} />
+                                </Link>
+                            )}
+                            <FontAwesomeIcon className="ml-4 mr-4" style={{color: "rgba(0,0,0,.5)"}} icon={faBell} />
+                            <FontAwesomeIcon className="mr-5" style={{color: "rgba(0,0,0,.5)"}} icon={faEnvelope} />
                             <NavbarText className="mr-5"><FontAwesomeIcon icon={faStoreAlt} /> Toko</NavbarText>
                             <NavbarText className="mr-3"><FontAwesomeIcon icon={faUser} /> Muhammad</NavbarText>
                         </div>
