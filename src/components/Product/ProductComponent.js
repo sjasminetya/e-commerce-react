@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faStoreAlt, faArchive, faClipboardList } from '@fortawesome/free-solid-svg-icons'
 import {useSelector} from 'react-redux'
 import {useHistory} from 'react-router-dom'
+import {changeRupiah} from '../../utils/changeRupiah'
 import './ProductComponent.css'
 
 function ProductComponent() {
@@ -11,9 +12,6 @@ function ProductComponent() {
     const history = useHistory()
     function goDetailProduct (id) {
         history.push(`/detail-product/${id}`)
-    }
-    function changeRupiah (price) {
-        return new Intl.NumberFormat(['ban', 'id']).format(price)
     }
     return (
         <div>
@@ -42,7 +40,7 @@ function ProductComponent() {
                                 <CardImg top width="100%" src={item.imgUrl} alt="Card image cap" />
                                 <CardBody>
                                     <CardTitle tag="h6" className="text-left">{item.title}</CardTitle>
-                                    <CardText className="text-danger">Rp {changeRupiah(item.price)}</CardText>
+                                    <CardText className="text-danger" style={{fontWeight: "bold"}}>Rp {changeRupiah(item.price)}</CardText>
                                 </CardBody>
                             </Card>
                         </div>

@@ -4,3 +4,14 @@
     object-fit: contain;
     border-radius: 10px;
 }
+
+.description-product .btn-tambah {
+    background: #FF4500;
+    border: none;
+    border-radius: 11px;
+    font-weight: bold;
+}
+
+.description-product .btn-tambah:hover {
+    background: #FF4500;
+}

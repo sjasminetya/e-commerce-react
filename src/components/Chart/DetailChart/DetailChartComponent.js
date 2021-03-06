@@ -4,6 +4,7 @@ import {useSelector, useDispatch} from 'react-redux'
 import {addQty, reduceQty, removeItem} from '../../../redux/action'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash, faHeart } from '@fortawesome/free-solid-svg-icons'
+import {changeRupiah} from '../../../utils/changeRupiah'
 import './DetailChartComponent.css'
 
 function DetailChart() {
@@ -54,7 +55,7 @@ function DetailChart() {
                                     </div>
                                     <div className="detail pl-3">
                                         <h5>{item.title}</h5>
-                                        <p className="text-danger">Rp {item.price}</p>
+                                        <p className="text-danger">Rp {changeRupiah(item.price)}</p>
                                     </div>
                                 </div>
                                 <div className="d-flex justify-content-between">
