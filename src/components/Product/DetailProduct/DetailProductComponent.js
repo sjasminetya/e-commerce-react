@@ -53,7 +53,7 @@ function DetailProductComponent() {
                                 <div>
                                     <h5 className="pl-5 variant-text" style={{paddingTop: "15px", color: "rgba(0,0,0,.5)"}}>Pilih Variant</h5>
                                     <div className="variant-warna ml-5">
-                                        <h6>Black</h6>
+                                        <h6 style={{color: "rgba(0,0,0,.5)"}}>Black</h6>
                                     </div>
                                 </div>
                             </div>
@@ -63,7 +63,7 @@ function DetailProductComponent() {
                                 <div>
                                     <h5 className="pl-5 variant-text" style={{paddingTop: "15px", color: "rgba(0,0,0,.5)"}}>Pilih Variant</h5>
                                     <div className="variant-warna ml-5">
-                                        <h6>M</h6>
+                                        <h6 style={{color: "rgba(0,0,0,.5)"}}>M</h6>
                                     </div>
                                 </div>
                             </div>
