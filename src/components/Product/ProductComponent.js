@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container, Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser, faStoreAlt, faArchive, faClipboardList } from '@fortawesome/free-solid-svg-icons'
+import { faUser, faStoreAlt, faArchive, faClipboardList, faStar } from '@fortawesome/free-solid-svg-icons'
 import {useSelector} from 'react-redux'
 import {useHistory} from 'react-router-dom'
 import {changeRupiah} from '../../utils/changeRupiah'
@@ -16,7 +16,7 @@ function ProductComponent() {
     return (
         <div>
             <Container>
-                <div className="breadcrumbs-icon d-flex">
+                <div className="breadcrumbs-icon d-flex" style={{color: "rgba(0,0,0,.5)"}}>
                     <div className="icon active">
                         <FontAwesomeIcon className="ml-5" icon={faArchive} /> Produk
                     </div>
@@ -36,11 +36,16 @@ function ProductComponent() {
                     <div className="row">
                     {productState.map(item => (
                         <div className="col-lg-3" key={item.id} onClick={() => goDetailProduct(item.id)}>
-                            <Card className="shadow p-3 mb-5 bg-body" style={{borderRadius: "10px", height: "400px"}}>
+                            <Card className="shadow p-3 mb-5 bg-body" style={{borderRadius: "10px", height: "450px"}}>
                                 <CardImg top width="100%" src={item.imgUrl} alt="Card image cap" />
                                 <CardBody>
-                                    <CardTitle tag="h6" className="text-left">{item.title}</CardTitle>
+                                    <CardTitle tag="h6">{item.title}</CardTitle>
                                     <CardText className="text-danger" style={{fontWeight: "bold"}}>Rp {changeRupiah(item.price)}</CardText>
+                                    <span class="checked"><FontAwesomeIcon icon={faStar} /></span>
+                                    <span class="checked"><FontAwesomeIcon icon={faStar} /></span>
+                                    <span class="checked"><FontAwesomeIcon icon={faStar} /></span>
+                                    <span><FontAwesomeIcon icon={faStar} /></span>
+                                    <span><FontAwesomeIcon icon={faStar} /></span>
                                 </CardBody>
                             </Card>
                         </div>

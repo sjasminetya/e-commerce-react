@@ -3,7 +3,8 @@
 }
 
 .breadcrumbs-icon .icon {
-    font-size: 20px;
+    font-size: 17px;
+    font-weight: bold;
 }
 
 .breadcrumbs-icon .active {
@@ -12,7 +13,7 @@
 
 .active-line {
     border-bottom: 3px solid green;
-    width: 15%;
+    width: 14%;
     margin: -4px 0px 0px 0px;
 }
 
@@ -24,4 +25,12 @@
 
 .list-product {
     margin: 20px 0px;
+}
+
+.list-product .checked {
+    color: orange;
+}
+
+.list-product span {
+    color: rgba(0,0,0,.5);
 }
