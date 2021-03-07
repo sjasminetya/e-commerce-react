@@ -14,12 +14,12 @@ function CartComponent(props) {
 
     return (
         <div>
-            <Modal isOpen={props.modal} toggle={props.toggle} className="modal-lg" style={{borderRadius: "10px"}}>
-                <ModalHeader toggle={props.toggle} className="mr-0">Berhasil Ditambahkan</ModalHeader>
+            <Modal isOpen={props.modal} toggle={props.toggle} className="modal-lg">
+                <ModalHeader toggle={props.toggle}>Berhasil Ditambahkan</ModalHeader>
                 <ModalBody>
                     {props.chart.map(item => (
                         item.id === Number(id) ? (
-                            <div className="content d-flex" key={item.id}>
+                            <div className="d-flex" key={item.id}>
                                 <div className="image-chart">
                                     <img src={item.imgUrl} alt=""/>
                                 </div>
