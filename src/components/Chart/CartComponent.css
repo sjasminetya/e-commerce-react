@@ -2,3 +2,8 @@
     width: auto;
     height: 100px;
 }
+
+.float-right {
+    position: absolute;
+    right: 0;
+}

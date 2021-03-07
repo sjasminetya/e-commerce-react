@@ -14,8 +14,8 @@ function CartComponent(props) {
 
     return (
         <div>
-            <Modal isOpen={props.modal} toggle={props.toggle}>
-                <ModalHeader toggle={props.toggle}>Berhasil Ditambahkan</ModalHeader>
+            <Modal isOpen={props.modal} toggle={props.toggle} className="modal-lg" style={{borderRadius: "10px"}}>
+                <ModalHeader toggle={props.toggle} className="mr-0">Berhasil Ditambahkan</ModalHeader>
                 <ModalBody>
                     {props.chart.map(item => (
                         item.id === Number(id) ? (
@@ -23,8 +23,8 @@ function CartComponent(props) {
                                 <div className="image-chart">
                                     <img src={item.imgUrl} alt=""/>
                                 </div>
-                                <h5 className="ml-3">{item.title}</h5>
-                                <Button className="btn-success" style={{height: "fit-content"}} onClick={goChart}>Lihat Keranjang</Button>
+                                <h5 className="ml-3" style={{color: "rgba(0,0,0,.5)"}}>{item.title}</h5>
+                                <Button className="btn-success float-right mr-3" style={{height: "fit-content"}} onClick={goChart}>Lihat Keranjang</Button>
                             </div>
                         ) : null
                     ))}
