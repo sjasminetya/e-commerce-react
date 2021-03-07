@@ -29,8 +29,13 @@
     background: green;
 }
 
-.list-product .btn-qty:hover {
+.list-product .btn-qty:hover,
+.list-product .btn-qty:focus {
     background: green;
+}
+
+.list-product .disabled:hover {
+    background: #6C757D;
 }
 
 .list-product .detail p {

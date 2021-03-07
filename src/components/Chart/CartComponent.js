@@ -2,9 +2,9 @@ import React from 'react'
 import { Modal, ModalHeader, ModalBody } from 'reactstrap'
 import {useParams, useHistory} from 'react-router-dom'
 import { Button } from 'reactstrap'
-import './ChartComponent.css'
+import './CartComponent.css'
 
-function ChartComponent(props) {
+function CartComponent(props) {
     const {id} = useParams()
     const history = useHistory()
 
@@ -34,4 +34,4 @@ function ChartComponent(props) {
     )
 }
 
-export default ChartComponent
+export default CartComponent

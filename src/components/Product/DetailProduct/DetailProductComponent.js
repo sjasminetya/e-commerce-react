@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { Button, Container, Row, } from 'reactstrap'
 import {useSelector, useDispatch} from 'react-redux'
-import ChartComponent from '../../Chart/ChartComponent'
+import CartComponent from '../../Chart/CartComponent'
 import {addToChart} from '../../../redux/action'
 import {changeRupiah} from '../../../utils/changeRupiah'
 import './DetailProductComponent.css'
@@ -69,7 +69,7 @@ function DetailProductComponent() {
                             </div>
                             <Button className="btn-tambah mt-5" onClick={() => toggle(detailState.id)}>Tambah ke keranjang</Button>
                             {modal ? (
-                                <ChartComponent modal={modal} toggle={closeToggle} chart={chartState} />
+                                <CartComponent modal={modal} toggle={closeToggle} chart={chartState} />
                             ) : null}
                         </div>
                     </div>

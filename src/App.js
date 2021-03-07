@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {BrowserRouter, Route} from 'react-router-dom'
 import HeaderComponent from './components/Header/HeaderComponent'
-import Chart from './containers/Chart'
+import Cart from './containers/Cart'
 import DetailProductContainer from './containers/DetailProductContainer'
 import ProductContainer from './containers/ProductContainer'
 
@@ -14,7 +14,7 @@ class App extends Component {
           <HeaderComponent />
           <Route path="/" exact component={ProductContainer} />
           <Route path="/detail-product/:id" component={DetailProductContainer} />
-          <Route path="/cart" component={Chart} />
+          <Route path="/cart" component={Cart} />
         </BrowserRouter>
       </div>
     )

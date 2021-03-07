@@ -26,11 +26,40 @@ export const addToChart = (id) => {
     }
 }
 
+export const emptyCart = () => {
+    return {
+        type: "EMPTY_CART",
+        payload: {cart: []}
+    }
+}
+
+export const readyBuy = (id) => {
+    const findId = product.find(item => item.id === Number(id))
+    return {
+        type: "READY_BUY",
+        payload: {buy: findId}
+    }
+}
+
+export const reduceReadyBuy = (id) => {
+    return {
+        type: "REDUCE_READY_BUY",
+        payload: id
+    }
+}
+
+export const emptyReadyBuy = (id) => {
+    return {
+        type: "EMPTY_READY_BUY",
+        payload: {buy: []}
+    }
+}
+
 export const addQty = (id) => {
     const findId = product.find(item => item.id === Number(id))
     return {
         type: "ADD_QTY",
-        payload: {cart: findId}
+        payload: {cart: findId, buy: findId}
     }
 }
 
@@ -38,7 +67,7 @@ export const reduceQty = (id) => {
     const findId = product.find(item => item.id === Number(id))
     return {
         type: "REDUCE_QTY",
-        payload: {cart: findId}
+        payload: {cart: findId, buy: findId}
     }
 }
 
