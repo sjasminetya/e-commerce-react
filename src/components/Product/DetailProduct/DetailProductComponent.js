@@ -25,14 +25,48 @@ function DetailProductComponent() {
             <Container>
                 <Row>
                     <div className="col-lg-5">
-                        <div className="image-product">
-                            <img src={detailState.imgUrl} alt=""/>
+                        <div className="main">
+                            <div className="track">
+                                <ul>
+                                    <li id="slide1"><img src={detailState.imgUrl} alt=""/></li>
+                                    <li id="slide2"><img src={detailState.slide2} alt=""/></li>
+                                    <li id="slide3"><img src={detailState.slide3} alt=""/></li>
+                                </ul>
+                            </div>
+                            <div className="slides">
+                                <a href="#slide1"><img src={detailState.imgUrl} alt=""/></a>
+                                <a href="#slide2"><img src={detailState.slide2} alt=""/></a>
+                                <a href="#slide3"><img src={detailState.slide3} alt=""/></a>
+                            </div>
                         </div>
                     </div>
                     <div className="col-lg-7">
                         <div className="description-product">
                             <h5>{detailState.title}</h5>
-                            <h4 className="pt-5">HARGA Rp{changeRupiah(detailState.price)}</h4>
+                            <div className="d-flex">
+                                <h5 className="pt-5" style={{color: "rgba(0,0,0,.5)"}}>HARGA</h5>
+                                <h4 className="pl-5 text-orange">Rp{changeRupiah(detailState.price)}</h4>
+                            </div>
+                            <hr/>
+                            <div className="d-flex mt-2">
+                                <h5 className="pt-3" style={{color: "rgba(0,0,0,.5)"}}>WARNA</h5>
+                                <div>
+                                    <h5 className="pl-5 variant-text" style={{paddingTop: "15px", color: "rgba(0,0,0,.5)"}}>Pilih Variant</h5>
+                                    <div className="variant-warna ml-5">
+                                        <h6>Black</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr/>
+                            <div className="d-flex mt-2">
+                                <h5 className="pt-3" style={{color: "rgba(0,0,0,.5)"}}>UKURAN</h5>
+                                <div>
+                                    <h5 className="pl-5 variant-text" style={{paddingTop: "15px", color: "rgba(0,0,0,.5)"}}>Pilih Variant</h5>
+                                    <div className="variant-warna ml-5">
+                                        <h6>M</h6>
+                                    </div>
+                                </div>
+                            </div>
                             <Button className="btn-tambah mt-5" onClick={() => toggle(detailState.id)}>Tambah ke keranjang</Button>
                             {modal ? (
                                 <ChartComponent modal={modal} toggle={closeToggle} chart={chartState} />
