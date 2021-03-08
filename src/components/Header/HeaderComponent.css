@@ -8,6 +8,11 @@
     font-weight: bold;
 }
 
+.search-input {
+    max-width: 50%;
+    margin-left: 10px;
+}
+
 .icon-cart {
     width: 20px;
     height: 20px;
@@ -20,7 +25,7 @@
     font-size: 10px;
     position: absolute;
     top: 21px;
-    left: 69.6%;
+    left: 72%;
 }
 
 .icon-cart p {
@@ -44,4 +49,130 @@ a:hover {
 .line {
     border: 1px solid #e0e0e0;
     height: 30px;
+}
+
+@media (max-width: 1309px) {
+    .icon-cart {
+        left: 71%;
+    }
+}
+
+@media (max-width: 1271px) {
+    .icon-cart {
+        left: 70.5%;
+    }
+}
+
+@media (max-width: 1243px) {
+    .icon-cart {
+        left: 69.3%;
+    }
+}
+
+@media (max-width: 1145px) {
+    .icon-cart {
+        left: 70%;
+    }
+}
+
+@media (max-width: 1059px) {
+    .icon-cart {
+        left: 72%;
+    }
+}
+
+@media (max-width: 1005px) {
+    .icon-cart {
+        left: 73%;
+    }
+}
+
+@media (max-width: 983px) {
+    .search-input {
+        width: 30% !important;
+    }
+
+    .icon-cart {
+        left: 61.5%;
+    }
+}
+
+@media (max-width: 957px) {
+    .icon-cart {
+        left: 61%;
+    }
+}
+
+@media (max-width: 931px) {
+    .icon-cart {
+        left: 60%;
+    }
+}
+
+@media (max-width: 915px) {
+    .search-input {
+        width: 25% !important;
+    }
+
+    .icon-cart {
+        left: 59%;
+    }
+}
+
+@media (max-width: 883px) {
+    .icon-cart {
+        left: 58%;
+    }
+}
+
+@media (max-width: 863px) {
+    .search-input {
+        opacity: 0 !important;
+    }
+
+    .icon-cart {
+        left: 57%;
+    }
+}
+
+@media (max-width: 845px) {
+    .icon-cart {
+        left: 56%;
+    }
+}
+
+@media (max-width: 819px) {
+    .icon-cart {
+        left: 55%;
+    }
+}
+
+@media (max-width: 789px) {
+    .icon-cart {
+        left: 52%;
+    }
+}
+
+@media (max-width: 765px) {
+    .search-input {
+        opacity: 1 !important;
+        width: 100% !important;
+        margin-left: 0px;
+    }
+
+    .icon-cart {
+        left: 4%;
+        top: 147px;
+    }
+}
+
+@media (max-width: 360px) {
+    .search-input {
+        width: 100% !important;
+    }
+
+    .icon-cart {
+        left: 4%;
+        top: 147px;
+    }
 }

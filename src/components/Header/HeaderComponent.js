@@ -29,25 +29,25 @@ function HeaderComponent() {
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
                     <NavbarText>Kategori</NavbarText>
-                    <InputGroup style={{width: "50%"}} className="ml-3">
+                    <InputGroup className="search-input">
                         <Input placeholder="search product" />
                         <InputGroupText><FontAwesomeIcon icon={faSearch} /></InputGroupText>
                     </InputGroup>
-                    <div className="ml-auto">
+                    <div className="ml-auto side-right">
                         {totalQty !== 0 ? (
                                 <Link to="/cart">
                                 <span className="icon-cart">{totalQty}</span>
-                                    <FontAwesomeIcon className="ml-5 mr-4" style={{color: "rgba(0,0,0,.5)"}} icon={faShoppingCart} />
+                                    <FontAwesomeIcon className="mr-4" style={{color: "rgba(0,0,0,.5)"}} icon={faShoppingCart} />
                                 </Link>
                         ) : (
                             <Link to="/cart">
-                                <FontAwesomeIcon className="ml-5 mr-4" style={{color: "rgba(0,0,0,.5)"}} icon={faShoppingCart} />
+                                <FontAwesomeIcon className="mr-4" style={{color: "rgba(0,0,0,.5)"}} icon={faShoppingCart} />
                             </Link>
                         )}
                         <FontAwesomeIcon className="ml-4 mr-5" style={{color: "rgba(0,0,0,.5)"}} icon={faBell} />
                         <FontAwesomeIcon className="mr-3" style={{color: "rgba(0,0,0,.5)"}} icon={faEnvelope} />
                         <span className="line"></span>
-                        <NavbarText className="ml-3 mr-5"><FontAwesomeIcon icon={faStoreAlt} /> Toko</NavbarText>
+                        <NavbarText className="ml-3 mr-3"><FontAwesomeIcon icon={faStoreAlt} /> Toko</NavbarText>
                         <NavbarText className="mr-3"><FontAwesomeIcon icon={faUser} /> Muhammad</NavbarText>
                     </div>
                 </Collapse>
