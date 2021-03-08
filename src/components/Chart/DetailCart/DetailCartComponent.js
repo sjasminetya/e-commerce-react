@@ -69,7 +69,7 @@ function DetailCart() {
                     dispatch(readyBuy(el.id))
                 } else {
                     dispatch(reduceReadyBuy(el.id))
-                    if (readyState.length !== 0) {
+                    if (readyState.length > 0) {
                         setCheckEl(true)
                     } else {
                         setCheckEl(false)
@@ -84,12 +84,13 @@ function DetailCart() {
             dispatch(emptyCart())
             dispatch(emptyReadyBuy())
         } else {
-            let readyBuy = readyState[0]
             chartState.forEach(item => {
-                if (item.id === readyBuy.id) {
-                    dispatch(reduceReadyBuy(readyBuy.id))
-                    dispatch(removeItem(item.id))
-                }
+                readyState.forEach(el => {
+                    if (item.id === el.id) {
+                        dispatch(emptyReadyBuy())
+                        dispatch(removeItem(item.id))
+                    }
+                })
             })
             
         }
@@ -101,7 +102,7 @@ function DetailCart() {
             setCheckEl(true)
         } else {
             setChecking(false)
-            if (readyState.length === 1) {
+            if (readyState.length > 0) {
                 setCheckEl(true)
             } else {
                 setCheckEl(false)

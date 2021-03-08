@@ -78,8 +78,4 @@ function DetailProductComponent() {
     )
 }
 
-// const mapDispatchToProps = dispatch => ({
-//     addToChart: (data) => dispatch(addToChart(data))
-// })
-
 export default DetailProductComponent

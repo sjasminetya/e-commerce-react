@@ -23,34 +23,34 @@ function HeaderComponent() {
     return (
         <div>
             <Navbar color="white" light expand="md" className="shadow-sm p-3 mb-5 bg-body rounded">
-                    <div className="ml-3 mr-3 pt-1 brand">
-                        <Link to="/"><h5 className="text-dark pt-2 pb-3 pl-3">ECOMMERCE</h5></Link>
-                    </div>
-                    <NavbarToggler onClick={toggle} />
-                    <Collapse isOpen={isOpen} navbar>
-                        <NavbarText>Kategori</NavbarText>
-                        <InputGroup style={{width: "50%"}} className="ml-3">
-                            <Input placeholder="search product" />
-                            <InputGroupText><FontAwesomeIcon icon={faSearch} /></InputGroupText>
-                        </InputGroup>
-                        <div className="ml-auto">
-                            {totalQty !== 0 ? (
-                                    <Link to="/cart">
-                                    <span className="icon-cart">{totalQty}</span>
-                                        <FontAwesomeIcon className="ml-5 mr-4" style={{color: "rgba(0,0,0,.5)"}} icon={faShoppingCart} />
-                                    </Link>
-                            ) : (
+                <div className="ml-3 mr-3 pt-1 brand">
+                    <Link to="/"><h5 className="text-dark pt-2 pb-3 pl-3">ECOMMERCE</h5></Link>
+                </div>
+                <NavbarToggler onClick={toggle} />
+                <Collapse isOpen={isOpen} navbar>
+                    <NavbarText>Kategori</NavbarText>
+                    <InputGroup style={{width: "50%"}} className="ml-3">
+                        <Input placeholder="search product" />
+                        <InputGroupText><FontAwesomeIcon icon={faSearch} /></InputGroupText>
+                    </InputGroup>
+                    <div className="ml-auto">
+                        {totalQty !== 0 ? (
                                 <Link to="/cart">
+                                <span className="icon-cart">{totalQty}</span>
                                     <FontAwesomeIcon className="ml-5 mr-4" style={{color: "rgba(0,0,0,.5)"}} icon={faShoppingCart} />
                                 </Link>
-                            )}
-                            <FontAwesomeIcon className="ml-4 mr-5" style={{color: "rgba(0,0,0,.5)"}} icon={faBell} />
-                            <FontAwesomeIcon className="mr-3" style={{color: "rgba(0,0,0,.5)"}} icon={faEnvelope} />
-                            <span className="line"></span>
-                            <NavbarText className="ml-3 mr-5"><FontAwesomeIcon icon={faStoreAlt} /> Toko</NavbarText>
-                            <NavbarText className="mr-3"><FontAwesomeIcon icon={faUser} /> Muhammad</NavbarText>
-                        </div>
-                    </Collapse>
+                        ) : (
+                            <Link to="/cart">
+                                <FontAwesomeIcon className="ml-5 mr-4" style={{color: "rgba(0,0,0,.5)"}} icon={faShoppingCart} />
+                            </Link>
+                        )}
+                        <FontAwesomeIcon className="ml-4 mr-5" style={{color: "rgba(0,0,0,.5)"}} icon={faBell} />
+                        <FontAwesomeIcon className="mr-3" style={{color: "rgba(0,0,0,.5)"}} icon={faEnvelope} />
+                        <span className="line"></span>
+                        <NavbarText className="ml-3 mr-5"><FontAwesomeIcon icon={faStoreAlt} /> Toko</NavbarText>
+                        <NavbarText className="mr-3"><FontAwesomeIcon icon={faUser} /> Muhammad</NavbarText>
+                    </div>
+                </Collapse>
             </Navbar>
         </div>
     )
