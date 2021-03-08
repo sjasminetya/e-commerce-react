@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { Button, Container, Row } from 'reactstrap'
 import {useSelector, useDispatch} from 'react-redux'
 import {addQty, reduceQty, removeItem} from '../../../redux/action'
@@ -31,7 +31,6 @@ function DetailCart() {
 
     const click = () => {
         if (chartState.length === readyState.length + 1) {
-            console.log(true)
             setChecking(!checking)
         } else {
             setChecking(false)
@@ -45,11 +44,11 @@ function DetailCart() {
             el.isChecked = event.target.checked
             if (el.isChecked) {
                 el.isChecked = true
-                setChecking(!checking)
+                setChecking(true)
                 dispatch(readyBuy(el.id))
             } else {
                 el.isChecked = false
-                setChecking(!checking)
+                setChecking(false)
                 dispatch(emptyReadyBuy())
             }
         })
@@ -66,9 +65,6 @@ function DetailCart() {
                 el.isChecked = event.target.checked
                 if (event.target.checked) {
                     click()
-                    console.log('click pilih', chartState.length === readyState.length)
-                    console.log('cart', chartState.length)
-                    console.log('ready', readyState.length)
                     setCheckEl(true)
                     dispatch(readyBuy(el.id))
                 } else {
@@ -99,9 +95,19 @@ function DetailCart() {
         }
     }
 
-    console.log('cart', chartState)
-    console.log('ready', readyState)
-    console.log('checking', checking)
+    useEffect(() => {
+        if (chartState.length === readyState.length) {
+            setChecking(true)
+            setCheckEl(true)
+        } else {
+            setChecking(false)
+            if (readyState.length === 1) {
+                setCheckEl(true)
+            } else {
+                setCheckEl(false)
+            }
+        }
+    }, [chartState.length, readyState.length])
 
     return (
         <div>

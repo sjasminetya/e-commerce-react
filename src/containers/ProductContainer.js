@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
 import ProductComponent from '../components/Product/ProductComponent'
 import {connect} from 'react-redux'
-import {getProduct, emptyReadyBuy} from '../redux/action'
+import {getProduct} from '../redux/action'
 
 class ProductContainer extends Component {
     componentDidMount () {
         this.props.getProduct()
-        this.props.emptyReadyBuy()
     }
     render() {
         return (
@@ -19,8 +18,7 @@ class ProductContainer extends Component {
 
 const mapDispatchToProps = dispatch => {
     return {
-        getProduct: () => dispatch(getProduct()),
-        emptyReadyBuy: () => dispatch(emptyReadyBuy()) 
+        getProduct: () => dispatch(getProduct())
     }
 }
 
