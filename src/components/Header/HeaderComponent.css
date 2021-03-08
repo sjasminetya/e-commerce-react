@@ -13,11 +13,14 @@
     height: 20px;
     border-radius: 50%;
     background: red;
+    border: 2px solid #FFFFFF;
     color: #FFFFFF;
-    font-weight: bold;
+    text-align: center;
+    padding: 0px auto;
+    font-size: 10px;
     position: absolute;
-    top: 23px;
-    left: 72.8%;
+    top: 21px;
+    left: 69.6%;
 }
 
 .icon-cart p {
@@ -36,4 +39,9 @@ a {
 
 a:hover {
     text-decoration: none !important;
+}
+
+.line {
+    border: 1px solid #e0e0e0;
+    height: 30px;
 }

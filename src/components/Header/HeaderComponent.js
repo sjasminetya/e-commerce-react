@@ -33,22 +33,21 @@ function HeaderComponent() {
                             <Input placeholder="search product" />
                             <InputGroupText><FontAwesomeIcon icon={faSearch} /></InputGroupText>
                         </InputGroup>
-                        <div className="ml-auto">
+                        <div className="ml-auto" style={{border: "1px solid red"}}>
                             {totalQty !== 0 ? (
                                     <Link to="/cart">
-                                    <div className="icon-cart">
-                                        <p>{totalQty}</p>
-                                    </div>
-                                        <FontAwesomeIcon className="ml-4" style={{color: "rgba(0,0,0,.5)"}} icon={faShoppingCart} />
+                                    <span className="icon-cart">{totalQty}</span>
+                                        <FontAwesomeIcon className="ml-5 mr-4" style={{color: "rgba(0,0,0,.5)"}} icon={faShoppingCart} />
                                     </Link>
                             ) : (
                                 <Link to="/cart">
-                                    <FontAwesomeIcon className="ml-4" style={{color: "rgba(0,0,0,.5)"}} icon={faShoppingCart} />
+                                    <FontAwesomeIcon className="ml-5 mr-4" style={{color: "rgba(0,0,0,.5)"}} icon={faShoppingCart} />
                                 </Link>
                             )}
-                            <FontAwesomeIcon className="ml-4 mr-4" style={{color: "rgba(0,0,0,.5)"}} icon={faBell} />
-                            <FontAwesomeIcon className="mr-5" style={{color: "rgba(0,0,0,.5)"}} icon={faEnvelope} />
-                            <NavbarText className="mr-5"><FontAwesomeIcon icon={faStoreAlt} /> Toko</NavbarText>
+                            <FontAwesomeIcon className="ml-4 mr-5" style={{color: "rgba(0,0,0,.5)"}} icon={faBell} />
+                            <FontAwesomeIcon className="mr-3" style={{color: "rgba(0,0,0,.5)"}} icon={faEnvelope} />
+                            <span className="line"></span>
+                            <NavbarText className="ml-3 mr-5"><FontAwesomeIcon icon={faStoreAlt} /> Toko</NavbarText>
                             <NavbarText className="mr-3"><FontAwesomeIcon icon={faUser} /> Muhammad</NavbarText>
                         </div>
                     </Collapse>
