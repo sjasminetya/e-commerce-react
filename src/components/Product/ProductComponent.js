@@ -30,7 +30,7 @@ function ProductComponent() {
                         <FontAwesomeIcon className="ml-5" icon={faClipboardList} /> Katalog
                     </div>
                 </div>
-                <div className="line"></div>
+                <div className="home-line"></div>
                 <div className="active-line"></div>
                 <div className="list-product">
                     <div className="row">

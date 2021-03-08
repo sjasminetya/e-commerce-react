@@ -48,7 +48,7 @@ export const reduceReadyBuy = (id) => {
     }
 }
 
-export const emptyReadyBuy = (id) => {
+export const emptyReadyBuy = () => {
     return {
         type: "EMPTY_READY_BUY",
         payload: {buy: []}

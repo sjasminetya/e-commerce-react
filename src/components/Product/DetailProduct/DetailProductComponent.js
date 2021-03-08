@@ -19,7 +19,6 @@ function DetailProductComponent() {
     const closeToggle = () => {
         setModal(!modal)
     }
-
     return (
         <div>
             <Container>

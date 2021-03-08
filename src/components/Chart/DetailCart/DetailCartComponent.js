@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import { Button, Container, Row } from 'reactstrap'
 import {useSelector, useDispatch} from 'react-redux'
 import {addQty, reduceQty, removeItem} from '../../../redux/action'
@@ -30,11 +30,11 @@ function DetailCart() {
     }
 
     const click = () => {
-        if (chartState.length === readyState.length || chartState.length === readyState.length + 1) {
+        if (chartState.length === readyState.length + 1) {
             console.log(true)
             setChecking(!checking)
         } else {
-            setChecking(!checking)
+            setChecking(false)
         }
     }
 
@@ -57,12 +57,18 @@ function DetailCart() {
     }
 
     const handleClickElement = (event) => {
+        if (event.target.checked === false && chartState.length === readyState.length) {
+            setChecking(false)
+        }
         let cart = chartState
         cart.forEach(el => {
             if (el.title === event.target.value) {
                 el.isChecked = event.target.checked
                 if (event.target.checked) {
                     click()
+                    console.log('click pilih', chartState.length === readyState.length)
+                    console.log('cart', chartState.length)
+                    console.log('ready', readyState.length)
                     setCheckEl(true)
                     dispatch(readyBuy(el.id))
                 } else {
@@ -95,10 +101,7 @@ function DetailCart() {
 
     console.log('cart', chartState)
     console.log('ready', readyState)
-
-    useEffect(() => {
-        click()
-    }, [])
+    console.log('checking', checking)
 
     return (
         <div>
