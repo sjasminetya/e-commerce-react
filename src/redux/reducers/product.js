@@ -29,9 +29,10 @@ const productReducer = (state = initialState, action) => {
         }
     } else if (action.type === 'READY_BUY') {
         const findProduct = state.readyBuy.find(item => item.id === Number(action.payload.buy.id) ? true : false)
+        const findCart = state.cart.find(item => item.id === Number(action.payload.buy.id) ? true : false)
         return {
             ...state,
-            readyBuy: findProduct === undefined ?  [...state.readyBuy, {...action.payload.buy, qty: 1, isChecked: true}] : state.readyBuy.map(item => item.id === Number(action.payload.buy.id) ? {...item, qty: item.qty + 1} : item)
+            readyBuy: findProduct === undefined ?  [...state.readyBuy, {...findCart, isChecked: true}] : state.readyBuy.map(item => item.id === Number(action.payload.buy.id) ? {...item, qty: item.qty + 1} : item)
         }
     } else if (action.type === 'REDUCE_READY_BUY') {
         return {

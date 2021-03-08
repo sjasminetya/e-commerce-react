@@ -33,7 +33,7 @@ function HeaderComponent() {
                             <Input placeholder="search product" />
                             <InputGroupText><FontAwesomeIcon icon={faSearch} /></InputGroupText>
                         </InputGroup>
-                        <div className="ml-auto" style={{border: "1px solid red"}}>
+                        <div className="ml-auto">
                             {totalQty !== 0 ? (
                                     <Link to="/cart">
                                     <span className="icon-cart">{totalQty}</span>

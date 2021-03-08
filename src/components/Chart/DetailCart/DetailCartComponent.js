@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { Button, Container, Row } from 'reactstrap'
 import {useSelector, useDispatch} from 'react-redux'
 import {addQty, reduceQty, removeItem} from '../../../redux/action'
@@ -29,8 +29,18 @@ function DetailCart() {
         dispatch(reduceReadyBuy(id))
     }
 
+    const click = () => {
+        if (chartState.length === readyState.length || chartState.length === readyState.length + 1) {
+            console.log(true)
+            setChecking(!checking)
+        } else {
+            setChecking(!checking)
+        }
+    }
+
     const handleClickAll = (event) => {
         let cart = chartState
+        dispatch(emptyReadyBuy())
         cart.forEach(el => {
             el.isChecked = event.target.checked
             if (el.isChecked) {
@@ -52,6 +62,7 @@ function DetailCart() {
             if (el.title === event.target.value) {
                 el.isChecked = event.target.checked
                 if (event.target.checked) {
+                    click()
                     setCheckEl(true)
                     dispatch(readyBuy(el.id))
                 } else {
@@ -82,6 +93,13 @@ function DetailCart() {
         }
     }
 
+    console.log('cart', chartState)
+    console.log('ready', readyState)
+
+    useEffect(() => {
+        click()
+    }, [])
+
     return (
         <div>
             <Container>
@@ -90,7 +108,7 @@ function DetailCart() {
                         <h4>Keranjang</h4>
                         <section className="delete-list-cart d-flex shadow p-3 bg-body justify-content-between">
                             <form className="d-flex">
-                                <input type="checkbox" className="pl-1" value="checkedall" onChange={handleClickAll} style={{marginTop: "10px"}} />
+                                <input type="checkbox" className="pl-1" checked={checking} value="checkedall" onChange={handleClickAll} style={{marginTop: "10px"}} />
                                 <label className="pt-1 pl-3">Pilih Semua Produk</label>
                             </form>
                             { readyState.length !== 0 ? <h6 className="pt-1 pl-1 text-green" onClick={handleDelete}>Hapus</h6> : null }

@@ -41,9 +41,9 @@ function ProductComponent() {
                                 <CardBody>
                                     <CardTitle tag="h6">{item.title}</CardTitle>
                                     <CardText className="text-danger" style={{fontWeight: "bold"}}>Rp {changeRupiah(item.price)}</CardText>
-                                    <span class="checked"><FontAwesomeIcon icon={faStar} /></span>
-                                    <span class="checked"><FontAwesomeIcon icon={faStar} /></span>
-                                    <span class="checked"><FontAwesomeIcon icon={faStar} /></span>
+                                    <span className="checked"><FontAwesomeIcon icon={faStar} /></span>
+                                    <span className="checked"><FontAwesomeIcon icon={faStar} /></span>
+                                    <span className="checked"><FontAwesomeIcon icon={faStar} /></span>
                                     <span><FontAwesomeIcon icon={faStar} /></span>
                                     <span><FontAwesomeIcon icon={faStar} /></span>
                                 </CardBody>
