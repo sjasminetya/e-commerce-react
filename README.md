@@ -13,6 +13,10 @@ Install all dependencies
 ```
 npm install
 ```
+Running
+```
+npm start
+```
 
 ## Screenshots
 <div class="flex" align="center">
