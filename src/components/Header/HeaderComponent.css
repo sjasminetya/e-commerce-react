@@ -13,7 +13,19 @@
     margin-left: 10px;
 }
 
-.icon-cart {
+.side-right {
+    position: relative;
+}
+
+.side-right .icon {
+    margin-left: 30px;
+}
+
+.side-right .font-icon {
+    margin-right: 30px;
+}
+
+.side-right .icon-cart {
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -24,80 +36,71 @@
     padding: 0px auto;
     font-size: 10px;
     position: absolute;
-    top: 21px;
-    left: 72%;
+    left: 10%;
 }
 
-.icon-cart p {
+.side-right .icon-cart p {
     margin-bottom: 0;
     margin-top: -2px;
     margin-left: 5px;
 }
 
-.icon-cart:hover {
+.side-right .icon-cart:hover {
     text-decoration: none;
 }
 
-a {
+.side-right a {
     color: rgba(0,0,0,.5) !important;
 }
 
-a:hover {
+.side-right a:hover {
     text-decoration: none !important;
 }
 
-.line {
+.side-right .line {
     border: 1px solid #e0e0e0;
     height: 30px;
 }
 
-@media (max-width: 1309px) {
-    .icon-cart {
-        left: 71%;
+@media (max-width: 1138px) {
+    .search-input {
+        width: 40% !important;
     }
 }
 
-@media (max-width: 1271px) {
-    .icon-cart {
-        left: 70.5%;
-    }
-}
-
-@media (max-width: 1243px) {
-    .icon-cart {
-        left: 69.3%;
-    }
-}
-
-@media (max-width: 1145px) {
-    .icon-cart {
-        left: 70%;
-    }
-}
-
-@media (max-width: 1059px) {
-    .icon-cart {
-        left: 72%;
-    }
-}
-
-@media (max-width: 1005px) {
-    .icon-cart {
-        left: 73%;
-    }
-}
-
-@media (max-width: 983px) {
+@media (max-width: 990px) {
     .search-input {
         width: 30% !important;
     }
+}
 
-    .icon-cart {
-        left: 61.5%;
+@media (max-width: 867px) {
+    .search-input {
+        width: 20% !important;
     }
 }
 
-@media (max-width: 957px) {
+@media (max-width: 761px) {
+    .item {
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+
+    .search-input {
+        width: 100% !important;
+    }
+
+    .side-right .icon {
+        margin-left: 20px;
+    }
+
+    .side-right .icon-cart {
+        left: 4%;
+    }
+}
+
+
+/* @media (max-width: 957px) {
     .icon-cart {
         left: 61%;
     }
@@ -175,4 +178,4 @@ a:hover {
         left: 4%;
         top: 147px;
     }
-}
+} */
