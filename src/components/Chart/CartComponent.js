@@ -24,7 +24,7 @@ function CartComponent(props) {
                                     <div className="image-chart">
                                         <img src={item.imgUrl} alt=""/>
                                     </div>
-                                    <h5 className="ml-2 title" style={{color: "rgba(0,0,0,.5)", border: "1px solid red"}}>{item.title}</h5>
+                                    <h5 className="ml-2 title" style={{color: "rgba(0,0,0,.5)"}}>{item.title}</h5>
                                 </div>
                                 <Button className="btn-success float-right mr-3 mt-4" style={{height: "fit-content", borderRadius: "7px"}} onClick={goChart}>Lihat Keranjang</Button>
                             </div>
