@@ -23,7 +23,7 @@ function DetailProductComponent() {
         <div>
             <Container>
                 <Row>
-                    <div className="col-lg-5">
+                    <div className="col-lg-5 col-md-7">
                         <div className="main">
                             <div className="track">
                                 <ul>
@@ -39,7 +39,7 @@ function DetailProductComponent() {
                             </div>
                         </div>
                     </div>
-                    <div className="col-lg-7">
+                    <div className="col-lg-7 col-md-5">
                         <div className="description-product">
                             <h5>{detailState.title}</h5>
                             <div className="d-flex">
