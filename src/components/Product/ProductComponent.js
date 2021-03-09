@@ -18,16 +18,16 @@ function ProductComponent() {
             <Container>
                 <div className="breadcrumbs-icon d-flex" style={{color: "rgba(0,0,0,.5)"}}>
                     <div className="icon active">
-                        <FontAwesomeIcon className="ml-5" icon={faArchive} /> Produk
+                        <FontAwesomeIcon icon={faArchive} /> Produk
                     </div>
                     <div className="icon">
-                        <FontAwesomeIcon className="ml-5" icon={faStoreAlt} /> Toko
+                        <FontAwesomeIcon icon={faStoreAlt} /> Toko
                     </div>
                     <div className="icon">
-                        <FontAwesomeIcon className="ml-5" icon={faUser} /> Profil
+                        <FontAwesomeIcon icon={faUser} /> Profil
                     </div>
                     <div className="icon">
-                        <FontAwesomeIcon className="ml-5" icon={faClipboardList} /> Katalog
+                        <FontAwesomeIcon icon={faClipboardList} /> Katalog
                     </div>
                 </div>
                 <div className="home-line"></div>
@@ -35,8 +35,8 @@ function ProductComponent() {
                 <div className="list-product">
                     <div className="row">
                     {productState.map(item => (
-                        <div className="col-lg-3" key={item.id} onClick={() => goDetailProduct(item.id)}>
-                            <Card className="shadow p-3 mb-5 bg-body" style={{borderRadius: "10px", height: "450px"}}>
+                        <div className="col-lg-3 col-md-4 col-sm-5 col-12 product-card" key={item.id} onClick={() => goDetailProduct(item.id)}>
+                            <Card className="shadow p-3 mb-5 bg-body height-card" style={{borderRadius: "10px", height: "450px"}}>
                                 <CardImg top width="100%" src={item.imgUrl} alt="Card image cap" />
                                 <CardBody>
                                     <CardTitle tag="h6">{item.title}</CardTitle>
