@@ -7,3 +7,49 @@
     position: absolute;
     right: 0;
 }
+
+.title {
+    width: 60%;
+}
+
+.cart-modal-detail {
+    display: flex;
+}
+
+.cart-modal {
+    display: flex;
+}
+
+@media (max-width: 974px) {
+    .title {
+        width: 40%;
+    }
+}
+
+@media (max-width: 473px) {
+    .title {
+        width: 35%;
+        font-size: small;
+    }
+}
+
+@media (max-width: 435px) {
+    .title {
+        width: 100%;
+        font-size: 20px;
+    }
+
+    .cart-modal-detail {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cart-modal {
+        display: flex;
+    }
+
+    .float-right {
+        left: 10px;
+        top: 120px;
+    }
+}
