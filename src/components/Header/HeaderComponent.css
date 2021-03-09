@@ -4,6 +4,10 @@
     height: 50px;
 }
 
+.brand a:hover {
+    text-decoration: none;
+}
+
 .brand h5 {
     font-weight: bold;
 }
