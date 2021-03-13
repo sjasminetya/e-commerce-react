@@ -20,7 +20,7 @@ const productReducer = (state = initialState, action) => {
         const findProduct = state.cart.find(item => item.id === Number(action.payload.cart.id) ? true : false)
         return {
             ...state,
-            cart: findProduct === undefined ?  [...state.cart, {...action.payload.cart, qty: 1, isChecked: false}] : state.cart.map(item => item.id === Number(action.payload.cart.id) ? {...item, qty: item.qty + 1} : item)
+            cart: findProduct === undefined ?  [...state.cart, {...action.payload.cart, qty: 1, isChecked: false}] : state.cart.map(item => item.id === Number(action.payload.cart.id) ? {...action.payload.cart, qty: item.qty + 1} : item)
         }
     } else if (action.type === 'EMPTY_CART') {
         return {

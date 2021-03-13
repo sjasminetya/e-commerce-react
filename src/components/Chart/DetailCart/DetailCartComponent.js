@@ -118,7 +118,7 @@ function DetailCart() {
                         <h4>Keranjang</h4>
                         <section className="delete-list-cart d-flex shadow p-3 bg-body justify-content-between">
                             <form className="d-flex">
-                                <input type="checkbox" className="pl-1" checked={checking} value="checkedall" onChange={handleClickAll} style={{marginTop: "10px"}} />
+                                <input type="checkbox" className="pl-1" checked={checking || false} value="checkedall" onChange={handleClickAll} style={{marginTop: "10px"}} />
                                 <label className="pt-1 pl-3">Pilih Semua Produk</label>
                             </form>
                             { readyState.length !== 0 ? <h6 className="pt-1 pl-1 text-green" onClick={handleDelete}>Hapus</h6> : null }
@@ -126,13 +126,14 @@ function DetailCart() {
                         {chartState.map(item => (
                             <section className="list-product shadow p-3 mb-5 bg-body" key={item.id}>
                                 <div className="d-flex">
-                                    <input key={item.id} type="checkbox" checked={item.isChecked} value={item.title} onChange={handleClickElement} style={{marginTop: "50px", marginRight: "10px"}} />
+                                    <input key={item.id} type="checkbox" checked={item.isChecked || false} value={item.title} onChange={handleClickElement} style={{marginTop: "50px", marginRight: "10px"}} />
                                     <div className="image-list">
                                         <img src={item.imgUrl} alt=""/>
                                     </div>
                                     <div className="detail pl-3">
                                         <h5>{item.title}</h5>
                                         <p className="text-danger">Rp {changeRupiah(item.price)}</p>
+                                        <p>{item.warna} {item.ukuran}</p>
                                     </div>
                                 </div>
                                 <div className="d-flex justify-content-between">

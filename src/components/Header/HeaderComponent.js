@@ -18,7 +18,8 @@ function HeaderComponent() {
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
     const chartState = useSelector(state => state.product.cart)
-    const totalQty = chartState.reduce((a, b) => a + b.qty, 0)
+    const totalQty = chartState.length
+    // const totalQty = chartState.reduce((a,b) => a + b.qty, 0)
 
     return (
         <div>

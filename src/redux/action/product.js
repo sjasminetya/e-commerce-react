@@ -18,11 +18,10 @@ export const detailProduct = (id) => {
     }
 }
 
-export const addToChart = (id) => {
-    const findId = product.find(item => item.id === Number(id))
+export const addToChart = (data) => {
     return {
         type: "ADD_TO_CHART",
-        payload: {cart: findId}
+        payload: {cart: data}
     }
 }
 

@@ -8,17 +8,27 @@ import './DetailProductComponent.css'
 
 function DetailProductComponent() {
     const detailState = useSelector(state => state.product.detailProduct)
-    const chartState = useSelector(state => state.product.cart)
     const [modal, setModal] = useState(false)
+    const [warna, setWarna] = useState("")
+    const [ukuran, setUkuran] = useState("")
     const dispatch = useDispatch()
+
+    const clickWarna = () => setWarna('Black')
+    const clickUkuran = () => setUkuran('M')
     
-    const toggle = (id) => {
-        dispatch(addToChart(id))
+    const toggle = () => {
+        const data = {
+            ...detailState,
+            warna: warna,
+            ukuran: ukuran
+        }
+        dispatch(addToChart(data))
         setModal(!modal)
     }
     const closeToggle = () => {
         setModal(!modal)
     }
+
     return (
         <div>
             <Container>
@@ -51,8 +61,8 @@ function DetailProductComponent() {
                                 <h5 className="pt-3" style={{color: "rgba(0,0,0,.5)"}}>WARNA</h5>
                                 <div>
                                     <h5 className="pl-5 variant-text" style={{paddingTop: "15px", color: "rgba(0,0,0,.5)"}}>Pilih Variant</h5>
-                                    <div className="variant-warna ml-5">
-                                        <h6 style={{color: "rgba(0,0,0,.5)"}}>Black</h6>
+                                    <div className="variant-warna ml-5" onClick={clickWarna}>
+                                        <h6 style={{color: "rgba(0,0,0,.5)", cursor: "pointer"}}>Black</h6>
                                     </div>
                                 </div>
                             </div>
@@ -61,14 +71,14 @@ function DetailProductComponent() {
                                 <h5 className="pt-3" style={{color: "rgba(0,0,0,.5)"}}>UKURAN</h5>
                                 <div>
                                     <h5 className="pl-5 variant-text" style={{paddingTop: "15px", color: "rgba(0,0,0,.5)"}}>Pilih Variant</h5>
-                                    <div className="variant-warna ml-5">
-                                        <h6 style={{color: "rgba(0,0,0,.5)"}}>M</h6>
+                                    <div className="variant-warna ml-5" onClick={clickUkuran}>
+                                        <h6 style={{color: "rgba(0,0,0,.5)", cursor: "pointer"}}>M</h6>
                                     </div>
                                 </div>
                             </div>
                             <Button className="btn-tambah mt-5" onClick={() => toggle(detailState.id)}>Tambah ke keranjang</Button>
                             {modal ? (
-                                <CartComponent modal={modal} toggle={closeToggle} chart={chartState} />
+                                <CartComponent modal={modal} toggle={closeToggle} cart={detailState} />
                             ) : null}
                         </div>
                     </div>
